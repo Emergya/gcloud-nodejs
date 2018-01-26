@@ -16,9 +16,8 @@ RUN curl https://sdk.cloud.google.com | bash && \
     echo 'source /root/google-cloud-sdk/completion.bash.inc' >> /etc/profile.d/gcloud
 # install gcloud extra components
 ARG GCLOUD_COMPONENTS=beta
-RUN /bin/bash --login -c 'gcloud components install $GCLOUD_COMPONENTS'
+RUN /bin/bash --login -c 'gcloud components install $GCLOUD_COMPONENTS && gcloud components update'
 
- 
 # Installing nodejs from binaries
 RUN cd /tmp && \
   curl -k "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz" -o node-linux-x64.tar.gz && \
