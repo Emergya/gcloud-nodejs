@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 # defaults to latest LTS
-ARG NODE_VERSION=8.9.4
+ARG NODE_VERSION=8.11.1
 
 ENV NODE_VERSION ${NODE_VERSION}
 
